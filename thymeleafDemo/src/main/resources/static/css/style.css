@@ -1,0 +1,14 @@
+body{
+	background: purple;
+	color:white;
+	padding:20px
+}
+section{
+	background: purple;
+	color: white;
+	padding: 30px
+}
+.profile{
+	border-radius:60%;
+	
+}

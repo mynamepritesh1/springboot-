@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleafe.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Sign Up</title>
+</head>
+<body>
+	<section class="vh-100 gradient-custom">
+		<div class="container py-5 h-100">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+					<div class="card bg-dark text-white" style="border-radius: 1rem;">
+						<div class="card-body p-5 text-center">
+
+							<div class="mb-md-5 mt-md-4 pb-5">
+						<!-- below div for message shows in sign up page if we did something wrong -->
+						<div th:if="${session.message}"
+							th:classappend="${session.message.type}" class="alert"
+							role="alert">
+							<p th:text="${session.message.content}"></p>
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+
+						<h2 class="text-center">Register here.!!</h2>
+						<form action="" th:action="@{/do_register}" method="post"
+							th:object="${user}">
+							<div class="form-group">
+								<label for="exampleInputEmail1"></label> <input
+									type="text" class="form-control" 
+									th:classappend="${#fields.hasErrors('name')?  'is-invalid':''}"
+									id="name_field"
+									aria-describedby="emailHelp" placeholder="Enter Name"
+									name="name" th:value="${user.name}">
+								<div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}">
+								Please choose a your name</div>
+							</div>
+
+							<div class="form-group">
+								<label for="exampleInputEmail1"></label> <input
+									type="email" class="form-control" id="email_field"
+									aria-describedby="emailHelp" placeholder="Enter Email"
+									name="email" th:value="${user.email}">
+
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1"></label> <input
+									type="password" class="form-control" id="password_field"
+									placeholder="Enter Password" name="password">
+
+								<div class="form-group">
+									<label for="exampleFormControlTextarea"></label>
+									<textarea class="form-control" id="about_field"
+										placeholder="Write about you" rows="5"
+										th:value="${user.about}" name="about"></textarea>
+								</div>
+
+								<div class=" form group form-check">
+									<input type="checkbox" name="agriment" class="form-check-input"
+										id="agriment">
+										 <label class="form-check-label"
+										for="agriment" >Accept terms and
+										conditions</label>
+								</div>
+
+							</div>
+							<div class="container text-center">
+								<button type="submit" class="btn btn-outline-light btn-lg px-2">Submit</button>
+								<button type="reset" class="btn btn-outline-light btn-lg px-3">Reset</button>
+							</div>
+						</form>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

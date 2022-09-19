@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleafe.org">
+<head>
+<meta charset="UTF-8" />
+<title>Footer template</title>
+</head>
+<body>
+<!-- title and subtitle value come dynamically from service page to footer page  -->
+	<footer th:fragment="footer1(title,subtitle)">
+		<div class="container">
+			<h1 th:text="${title}"></h1>
+			<h1 th:text="${subtitle}"></h1>
+			<h1>designed by pritesh ingale</h1>
+			<h2>learing spring boot</h2>
+
+
+
+
+
+		</div>
+
+
+
+	</footer>
+
+
+
+
+</body>
+</html>

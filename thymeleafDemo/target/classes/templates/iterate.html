@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleafe.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Example of iterate</title>
+</head>
+<body>
+	<h1>traverse</h1>
+	<!-- print list -->
+	<h1 th:text="${names}"></h1>
+	<!-- print the list using th:each which is exactly same as loop -->
+	<ul>
+	<!-- status shows where we work it has a index that iterate over it giving the index of our loop  -->
+	<li th:each="n,status : ${names}">
+	<!-- th:style has provide the style  -->
+	<span th:style="${status.odd} ? 'font-weight:bold' : 'color:red' " th:text="${status.index+1}+' '+${n}"></span>
+	
+	</li>
+	
+	
+	</ul>
+</body>
+</html>

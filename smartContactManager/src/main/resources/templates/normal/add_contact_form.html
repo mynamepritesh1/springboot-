@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleafe.org"
+	th:replace="normal/user::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>User Dashboard</title>
+</head>
+<body>
+
+	<section>
+		<div class="card mr-3 ml-3">
+			<div class="card-body ">
+				<h1 class="text-center">Add Contact</h1>
+				<div class="div container-fluid mt-1">
+
+					<div class="row ">
+
+						<div class="col-md-10 offset-md-1">
+							<form action="#" th:object="${contact}"
+								enctype="multipart/form-data" method="post"
+								th:action="@{/user/process-contact}" class="mt-2">
+
+
+
+								<div class="row">
+									<div class="col">
+										<i class="fa fa-user"></i> <input type="text"
+											class="form-control" placeholder="First name" name="name">
+									</div>
+									<div class="col">
+										<i class="fa fa-user"></i> <input type="text"
+											class="form-control" name="secondName"
+											placeholder="Last name">
+									</div>
+								</div>
+
+
+
+
+								<div class="row mt-3">
+									<div class="col">
+										<i class="fa fa-phone"></i> <input type="number"
+											class="form-control" name="phone"
+											placeholder="Enter Phone Number">
+									</div>
+									<div class="col mt-1">
+										<i class="fa fa-envelope"></i> <input type="email"
+											name="email" class="form-control" placeholder="Enter Email">
+									</div>
+								</div>
+
+								<!-- Work field -->
+								<div class="form-group">
+									<i class="fa fa-briefcase"></i> <label for="inputAddress2"></label>
+									<input type="text" class="form-control" id="inputAddress2"
+										name="work" placeholder="Enter your work">
+								</div>
+
+								<!-- description -->
+								<div class="form-group">
+									<i class="fa fa-user"></i> <label
+										for="exampleFormControlTextarea1"></label>
+									<textarea class="form-control" id="exampleFormControlTextarea1"
+										rows="5" name="description"
+										placeholder="Enter description here"></textarea>
+								</div>
+								<!-- Image field -->
+								<div class="custom-file">
+									<input type="file" class="file" name="image" />
+								</div>
+								<div class="text-center">
+									<button type="submit" class="btn btn-outline-success btn-lg px-5">Add
+										Contact</button>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

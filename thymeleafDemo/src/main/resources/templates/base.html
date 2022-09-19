@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleafe.org" th:fragment="layout(content)">
+<head>
+	<meta charset="UTF-8" />
+	<title>Base Page</title>
+	<link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1>this is common header</h1>
+	<div th:replace="${content}"></div>
+	<h2>this is common footer</h2>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Condition template</title>
+</head>
+<body>
+	<h1>Condition</h1>
+	
+	<!-- lendering using elvic operator its gives condition for active or not   -->
+	<h1>
+		User is <span th:style="${isActive} ?  'color:green' : 'color:red'"
+			th:text="${isActive} ? 'ACTIVE' : 'NOT ACTIVE'"></span>
+	</h1>
+	
+	<!-- lendering by using if-unless statement it gives only true and false only -->
+	<h1 th:if="${gender}=='M'">Male</h1>
+	<h1 th:unless="${gender}=='M'">Female</h1>
+	
+	
+	<!-- for list using switch statement -->
+	<div th:switch="${#lists.size(mylist)}">
+	<h1 th:case="'0'">list contain zero element</h1>
+	<h1 th:case="'1'">list contain one element</h1>
+	<h1 th:case="*">list contain more than one element</h1>
+	
+	</div>
+</body>
+</html>
